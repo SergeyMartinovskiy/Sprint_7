@@ -1,4 +1,7 @@
 import random_data
+
+
+
 valid_login = 'Sergey'
 empty_login = ""
 empty_password = ""
