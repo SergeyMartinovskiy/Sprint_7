@@ -1,9 +1,8 @@
 import allure
-import pytest
 import requests
 from urls import Urls
 from random_data import gen_fake_login_courier, gen_fake_password, gen_fake_first_name
-
+import pytest
 
 
 @allure.title('Создание курьера. Болванка')

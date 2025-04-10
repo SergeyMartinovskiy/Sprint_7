@@ -2,6 +2,7 @@
 import allure
 import requests
 from random_data import gen_fake_login_courier, gen_fake_first_name, gen_fake_password
+from conftest import create_courier
 from urls import Urls
 from data import empty_login, empty_password, valid_login
 
