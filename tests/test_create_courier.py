@@ -6,17 +6,12 @@ from urls import Urls
 from data import empty_login, empty_password, valid_login
 
 
-
 class TestCreateCourier:
     @allure.title('Проверка на создание курьера, на возврат ответа код 201 и тело ответа "ok:True"')
-    def test_valid_create_courier(self):
-        payload = {
-            'login': gen_fake_login_courier(),
-            'password': gen_fake_password(),
-            'firstname': gen_fake_first_name()
-        }
-        response = requests.post(Urls.URL_MAKE_COURIER, data = payload)
-        assert response.status_code == 201 and response.json() == {'ok':True}
+    def test_valid_create_courier(self, create_courier):
+        create_courier_request = create_courier
+        assert create_courier_request.status_code == 201 and create_courier_request.json() == {'ok': True}
+
 
     @allure.title('Получение ошибки "Этот логин уже используется" '
                   'при повторном создании курьера с имеющимся логином')
